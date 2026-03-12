@@ -25,5 +25,6 @@ Angular Learning Guide
 * In Angular, a component is the basic building block of a UI.
 * **How to use one component into another component** : 
   If you want to use the Login component inside the App component, first add the Login component’s selector in app.html, and then import the LoginComponent in app.ts.
+* **To generate component** : ng g c componentName
 
 
