@@ -8,3 +8,6 @@ Angular Learning Guide
 * To run Angular File : ng serve
 * To run and Open in Browser : ng serve --open
 * To check all Installation : on Command Line : run : ng version
+# File Structure
+ **Dependencies vs DevDependencies**
+* Dependencies are the packages required to run your application in production. If you deploy your app, these packages must be installed. And DevDependencies packages are only needed during development, not when the app runs in production.
