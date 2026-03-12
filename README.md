@@ -17,4 +17,7 @@ Angular Learning Guide
 * Syntax : {{title}},{{2+2}},{{'hello'.toUpperCase()}},{{3==3}}
 * Limitation : {{}} not declate variable inside this , not increment/decrement
 # Angular CLI
+* Angular CLI(Command Line Interface) is a  tool that helps developers create, build,test and deploy Angular applications.
+* To Check Angular CLI Installation  : ng version
+* To generate Componenet : ng generate component login  or ng g c login
 
