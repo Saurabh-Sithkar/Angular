@@ -35,7 +35,9 @@ Angular Learning Guide
     styles:'h1{color:blue; }'
 })
 * export class Profile { }
-
+# Function Call on Button Click
+* <button (click)="handleClick()" >Touch me</button>
+* Define handleClick() function in .ts file
 
 
 
