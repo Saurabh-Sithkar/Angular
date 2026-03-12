@@ -28,6 +28,15 @@ Angular Learning Guide
 * **To generate component** : ng g c componentName
 * **Type of Component** : 1. Normal Component  2. Inline Component
 # Make Custom Component
+* import { Component } from '@angular/core';
+* @Component({    
+    selector: 'app-profile',
+    template:`<h1>Profile</h1>`,
+    styles:'h1{color:blue; }'
+})
+* export class Profile { }
+
+
 
 
 
