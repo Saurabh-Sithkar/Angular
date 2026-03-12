@@ -38,6 +38,7 @@ Angular Learning Guide
 # Function Call on Button Click
 * <button (click)="handleClick()" >Touch me</button>
 * Define handleClick() function in .ts file
+* To call function inside a function use this.function_Name
 
 
 
