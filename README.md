@@ -19,5 +19,8 @@ Angular Learning Guide
 # Angular CLI
 * Angular CLI(Command Line Interface) is a  tool that helps developers create, build,test and deploy Angular applications.
 * To Check Angular CLI Installation  : ng version
-* To generate Componenet : ng generate component login  or ng g c login
+* To generate Componenet : ng generate component login  **or** ng g c login
+* To get help : ng help
+# Components in Angular
+*
 
