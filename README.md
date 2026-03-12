@@ -11,3 +11,10 @@ Angular Learning Guide
 # File Structure
  **Dependencies vs DevDependencies**
 * Dependencies are the packages required to run your application in production. If you deploy your app, these packages must be installed. And DevDependencies packages are only needed during development, not when the app runs in production.
+# Interpolation in Angular
+* Display data from TS to HTML file
+* Execuet JS code in HTML file
+* Syntax : {{title}},{{2+2}},{{'hello'.toUpperCase()}},{{3==3}}
+* Limitation : {{}} not declate variable inside this , not increment/decrement
+# Angular CLI
+
