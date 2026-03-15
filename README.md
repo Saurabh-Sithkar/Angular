@@ -49,6 +49,9 @@ Angular Learning Guide
 * **Event** : To perform any action
 * Eg : click, mouseenter,mouseleave,input,focus,blur
 # Get and Set Input field Value
+* **Get** : Input Field k value ko nikaalna
+* **Set** : Button or External Event k upper Input field k value ko change krna
+
 
 
 
