@@ -40,6 +40,9 @@ Angular Learning Guide
 * Define handleClick() function in .ts file
 * To call function inside a function use this.function_Name
 # Define Data Type in Angular
+* Syntax : var_name:data_type = value
+* For Multiple Value : data:string | nummber = "Sithkar"
+* For Any data type : other:any = true
 
 
 
