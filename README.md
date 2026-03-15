@@ -53,7 +53,17 @@ Angular Learning Guide
 * **Set** : Button or External Event k upper Input field k value ko change krna
 * use Template Reference Variable
 * **<input type="text" value="{{email}}" placehlder="Enter Email" #emailField>**
-* 
+# Style Option
+* **Global Style** : Write CSS in style.css file
+* Global file is attached in angular.json.
+* last attached CSS file property is applicable.
+# If Else in Angular | Hide-Show | Toggle
+* @if(x==10) {...}
+* @else {...}
+# Else If Condition | Control Flow Statment
+
+
+
 
 
 
