@@ -51,6 +51,9 @@ Angular Learning Guide
 # Get and Set Input field Value
 * **Get** : Input Field k value ko nikaalna
 * **Set** : Button or External Event k upper Input field k value ko change krna
+* use Template Reference Variable
+* **<input type="text" value="{{email}}" placehlder="Enter Email" #emailField>**
+* 
 
 
 
