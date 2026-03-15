@@ -43,6 +43,9 @@ Angular Learning Guide
 * Syntax : var_name:data_type = value
 * For Multiple Value : data:string | nummber = "Sithkar"
 * For Any data type : other:any = true
+# Make a Counter App 
+* Do it by yourself
+# Important Event in Angular
 
 
 
