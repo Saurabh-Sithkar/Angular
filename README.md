@@ -46,6 +46,10 @@ Angular Learning Guide
 # Make a Counter App 
 * Do it by yourself
 # Important Event in Angular
+* **Event** : To perform any action
+* Eg : click, mouseenter,mouseleave,input,focus,blur
+# Get and Set Input field Value
+
 
 
 
