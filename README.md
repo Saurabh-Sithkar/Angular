@@ -174,7 +174,62 @@ export class App {
 <button (click)="showValue()" >Show value</button>
 <button (click)="updateX()" >Update value</button>
 ```
+# Effect in Angular
+* **effect** is used to run some code automatically whenever a signal value changes.
+* Effect = Automatically run code when a signal changes.
+* **Real Life Example**
+*  Imagine YouTube notifications.
+*  Channel uploads video → notification automatically appears.
+*  Here:
+*  Signal → number of videos
+*  Effect → notification system
+*  Whenever the signal changes → effect runs automatically.
+*  .ts file
+```html
+import { Component, signal, effect } from '@angular/core';
 
+@Component({
+  selector: 'app-root',
+  imports: [],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+
+  count = signal(0);
+  displayHeading = signal(false);
+
+  constructor(){
+    effect(() => {
+      if(this.count() == 2){
+        this.displayHeading.set(true);
+
+        setTimeout(() => {
+          this.displayHeading.set(false);
+        }, 2000);
+
+      }else{
+        this.displayHeading.set(false);
+      }
+    })
+  }
+  toggleValue(){
+    this.count.set(this.count() + 1);
+  }
+}
+```
+* .html file
+```html
+<h1>Computed Signlas</h1>
+<h1>{{count()}}</h1>
+<button (click)="toggleValue()" >Update userName</button>
+
+@if(displayHeading()){
+   <h1 style="background-color: green;">Page Heading</h1>
+}
+```
+
+   
 
 
 
