@@ -73,14 +73,18 @@ Angular Learning Guide
    @default{ ... }
 ```
 # For Loop in Template File ( HTML wali File )
-* make users array in .ts file
+* Make array in .ts file
+* If array is like this
+```html
+  users=['sithkar','sam','sachin','satyarth','satyam']
+```
 ```html
 * @for( user of users;track user){
    <h2>{{user}}</h2>
 *  }
 ```
 * If array is like this
-  ```html
+```html
   students=[
    {name:'sithkar',age:22,email:'sithkar@example.com'},
    {name:'sam',age:23,email:'sam@example.com'},
@@ -89,7 +93,7 @@ Angular Learning Guide
    {name:'satyam',age:26,email:'satyam@example.com'}
   ]
  ```
-
+* Then For loop is 
 ```html
 @for(student of students;track student){
    <h2>{{student.name}}</h2>
