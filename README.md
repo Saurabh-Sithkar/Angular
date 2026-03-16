@@ -107,7 +107,33 @@ Angular Learning Guide
 * **Types of Signals**
 * **Writable Signals** : value can  be change
 * **Computed Signals** : read  only
-* 
+# Data Type with Signals
+* In .ts file
+```html
+import { Component, signal } from '@angular/core';
+@Component({
+  selector: 'app-root',
+  imports: [],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  
+ data = signal<number|string>(10);
+ updateData() {
+  this.data.set('Hello World');
+ }
+}
+```
+.html file
+```html
+<h1>Signlas</h1>
+{{data()}}
+<button (click)="updateData()" >update</button>
+```
+
+
+
 
 
 
