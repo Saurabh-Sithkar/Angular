@@ -266,7 +266,29 @@ let e=$even)
 2. **View → Component**
 
 So if the **value changes in the input field**, the **component variable also updates automatically**, and if the **component value changes**, the **UI updates automatically**.
+**Code**
+* .ts file
+```html
+import { Component, signal, effect } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
+@Component({
+  selector: 'app-root',
+  imports: [FormsModule],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+   name="sithkar"
+}
+```
+* .html file
+```html
+<h1>Two Way Binding</h1>
+<input [(ngModel)]="name" type="text" placeholder="enter name">
+
+<h1>{{name}}</h1>
+```
    
 
 
