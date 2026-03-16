@@ -139,6 +139,41 @@ updateVal(){
 {{data()}}
 <button (click)="updateData()" >update</button>
 ```
+# Computed Signals
+* Forcefully cannot be change but if its dependency is on another signal then it can be change.
+* .ts file
+```html
+import { Component, signal,computed } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  imports: [],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+ x = signal(10);
+ y = signal(20);
+ z = computed(() => this.x() + this.y());
+ 
+ showValue(){
+   console.log(this.z());
+   this.x.set(100);
+   console.log(this.z());
+ }
+ updateX(){
+   this.x.set(100);
+ }
+}
+```
+* .html file
+```html
+<h1>Computed Signlas</h1>
+
+<h1>{{z()}}</h1>
+<button (click)="showValue()" >Show value</button>
+<button (click)="updateX()" >Update value</button>
+```
 
 
 
