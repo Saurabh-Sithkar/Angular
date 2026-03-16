@@ -176,14 +176,17 @@ export class App {
 ```
 # Effect in Angular
 * **effect** is used to run some code automatically whenever a signal value changes.
-* Effect = Automatically run code when a signal changes.
+* **Effect = Automatically run code when a signal changes.**
+
 * **Real Life Example**
-*  Imagine YouTube notifications.
-*  Channel uploads video → notification automatically appears.
-*  Here:
-*  Signal → number of videos
-*  Effect → notification system
-*  Whenever the signal changes → effect runs automatically.
+  * Imagine YouTube notifications.
+  * Channel uploads video → notification automatically appears.
+
+  **Here:**
+  * Signal → number of videos
+  * Effect → notification system
+
+  Whenever the signal changes → **effect runs automatically**.
 *  .ts file
 ```html
 import { Component, signal, effect } from '@angular/core';
@@ -229,6 +232,9 @@ export class App {
 }
 ```
 # For Loop contextual Variables
+.ts file 
+* Make a Array users
+.html file
 ```html
 <h1>For Loop contextual Variables</h1>
 @for(user of users;track user;
@@ -248,9 +254,19 @@ let e=$even)
         //code
         <h1>{{$count}}</h1>
     }
-
 }
+@empty(){
+    <h1> No Record Found </h1>
+  }
 ```
+# Two Way Binding
+**Two-way data binding in Angular** means **data flows in both directions**:
+
+1. **Component → View (HTML)**
+2. **View → Component**
+
+So if the **value changes in the input field**, the **component variable also updates automatically**, and if the **component value changes**, the **UI updates automatically**.
+
    
 
 
