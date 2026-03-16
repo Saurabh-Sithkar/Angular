@@ -64,6 +64,9 @@ Angular Learning Guide
 * @if(x==2) {...}
 * @else if(x<2) {...}
 * @else {...}
+# Switch Case in Angular
+
+  
 
 
 
