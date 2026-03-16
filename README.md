@@ -65,6 +65,12 @@ Angular Learning Guide
 * @else if(x<2) {...}
 * @else {...}
 # Switch Case in Angular
+* @switch(color){
+*   @case('red'){ ... }
+*   @case('green'){ ... }
+*   @case('yellow'){ ... }
+*   @default{ ... }
+
 
   
 
