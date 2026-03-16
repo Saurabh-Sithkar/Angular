@@ -118,11 +118,19 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  
+* only signal ka  datatype define krna ho
  data = signal<number|string>(10);
+* signal and data dono ka datatype define krna ho
+ data: WritableSignal<number | string> = signal(10);
+* Computed Signal (Only Read)
+  count:Signal<number> = computed(()=>200);
  updateData() {
   this.data.set('Hello World');
  }
+* Update : Limited use : This only work for singal data type value
+updateVal(){  
+  this.data.update((val))=>val+1);
+}
 }
 ```
 .html file
@@ -131,6 +139,7 @@ export class App {
 {{data()}}
 <button (click)="updateData()" >update</button>
 ```
+
 
 
 
