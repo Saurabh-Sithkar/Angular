@@ -101,6 +101,14 @@ Angular Learning Guide
    <h2>{{student.email}}</h2>
 }
 ```
+# Signals
+* A signal is a wrapper around a value that give a signal when value changes.
+* Eg : count = signal(10);
+* **Types of Signals**
+* **Writable Signals** : value can  be change
+* **Computed Signals** : read  only
+* 
+
 
 
 
