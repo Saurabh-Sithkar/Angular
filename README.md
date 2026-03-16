@@ -79,6 +79,24 @@ Angular Learning Guide
    <h2>{{user}}</h2>
 *  }
 ```
+* If array is like this
+  ```html
+  students=[
+   {name:'sithkar',age:22,email:'sithkar@example.com'},
+   {name:'sam',age:23,email:'sam@example.com'},
+   {name:'sachin',age:24,email:'sachin@example.com'},
+   {name:'satyarth',age:25,email:'satyarth@example.com'},
+   {name:'satyam',age:26,email:'satyam@example.com'}
+  ]
+ ```
+
+```html
+@for(student of students;track student){
+   <h2>{{student.name}}</h2>
+   <h2>{{student.age}}</h2>
+   <h2>{{student.email}}</h2>
+}
+```
 
 
 
