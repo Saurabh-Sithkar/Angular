@@ -266,6 +266,7 @@ let e=$even)
 2. **View → Component**
 
 So if the **value changes in the input field**, the **component variable also updates automatically**, and if the **component value changes**, the **UI updates automatically**.
+
 **Code**
 * .ts file
 ```html
@@ -289,6 +290,7 @@ export class App {
 
 <h1>{{name}}</h1>
 ```
+* 4:02:48 TO DO List
    
 
 
