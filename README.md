@@ -65,11 +65,21 @@ Angular Learning Guide
 * @else if(x<2) {...}
 * @else {...}
 # Switch Case in Angular
+``` html
 * @switch(color){
-*   @case('red'){ ... }
-*   @case('green'){ ... }
-*   @case('yellow'){ ... }
-*   @default{ ... }
+   @case('red'){ ... }
+   @case('green'){ ... }
+   @case('yellow'){ ... }
+   @default{ ... }
+```
+# For Loop in Template File ( HTML wali File )
+* make users array in .ts file
+```html
+* @for( user of users;track user){
+   <h2>{{user}}</h2>
+*  }
+```
+
 
 
   
