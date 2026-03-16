@@ -228,7 +228,29 @@ export class App {
    <h1 style="background-color: green;">Page Heading</h1>
 }
 ```
+# For Loop contextual Variables
+```html
+<h1>For Loop contextual Variables</h1>
+@for(user of users;track user;
+let i = $index;
+let f=$first;
+let l=$last;
+let o=$odd;
+let e=$even)
+{
+    @if(f||l){
+        //code
+    }
+    @if(o){
+        //code
+    }
+     @if(e){
+        //code
+        <h1>{{$count}}</h1>
+    }
 
+}
+```
    
 
 
