@@ -471,7 +471,27 @@ export class App {
 </ul>
 <router-outlet/>
 ```
-
+# Header with Routing
+* header.html
+```html
+<nav>
+    <h2>Logo</h2>
+    <ul>
+        <li>
+            <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home</a>
+        </li>
+    <li>
+        <a routerLinkActive="active" routerLink="/about">About</a>
+    </li>
+    <li>
+        <a routerLinkActive="active" routerLink="/contact">Contact</a>
+    </li>
+    <li>
+        <a routerLinkActive="active" routerLink="/login">Login</a>
+    </li>
+</ul>
+</nav>
+```
 
 
 
