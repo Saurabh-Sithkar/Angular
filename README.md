@@ -340,7 +340,51 @@ export class App {
 - Used to modify the **appearance or behavior** of an existing element.
 - They do not change the DOM structure.
 - Common examples: `ngClass`, `ngStyle`
-   
+## *ngFor Directive in Angular
+`*ngFor` is a **structural directive** used to **loop through a list or array** and display data dynamically in the UI.
+---
+### Syntax
+```html
+*ngFor="let item of items"
+```
+* app.ts file
+```html
+users = ["Saurabh", "Rahul", "Aman"];
+```
+```html
+<ul>
+  <li *ngFor="let user of users">
+    {{ user }}
+  </li>
+</ul>
+```
+**Nested *ngfor**
+* app.ts file
+```html
+users = [
+  {
+    name: "Saurabh",
+    skills: ["Angular", "React", "Node"]
+  },
+  {
+    name: "Rahul",
+    skills: ["Java", "Spring Boot"]
+  }
+];
+```
+* app.html
+```html
+<div *ngFor="let user of users">
+  <h3>{{ user.name }}</h3>
+
+  <ul>
+    <li *ngFor="let skill of user.skills">
+      {{ skill }}
+    </li>
+  </ul>
+</div>
+```
+
 
 
 
