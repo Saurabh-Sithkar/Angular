@@ -325,8 +325,22 @@ export class App {
 <button (click)="updateHeadingSize()">Toggle Font</button>
 <h1 [style.fontSize]="zoom ? '80px':'50px'" >Hii</h1>
 ```
+## Angular Directives
+### 1. Component Directives
+- The most common type of directive.
+- Used with a component's template to define UI.
+- Every Angular component itself is a directive with a template.
+---
+### 2. Structural Directives
+- Used to change the structure of the DOM.
+- They can **add, remove, or manipulate elements** in the DOM.
+- Common examples: `*ngIf`, `*ngFor`
+---
+### 3. Attribute Directives
+- Used to modify the **appearance or behavior** of an existing element.
+- They do not change the DOM structure.
+- Common examples: `ngClass`, `ngStyle`
    
-
 
 
 
