@@ -290,7 +290,41 @@ export class App {
 
 <h1>{{name}}</h1>
 ```
-* 4:02:48 TO DO List
+* **Exercise : Make To-Do List**
+# Dynamic Style
+* .ts file
+```html
+import { Component, signal, effect } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  imports: [FormsModule],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+   bgColor="red";
+   fontSize=80;
+    headingSizeBig="80px";
+    headingSizeSmall="30px";
+    zoom=true;
+    updateHeadingSize(){
+      this.zoom=!this.zoom;
+    }
+}
+```
+* .html file
+```html
+<h1
+[style.backgroundColor]="bgColor"
+[style.fontSize.px]="fontSize"
+>Dynamic Style</h1>
+
+<h1 [style.fontSize]="zoom ? headingSizeBig:headingSizeSmall" >Heading</h1>
+<button (click)="updateHeadingSize()">Toggle Font</button>
+<h1 [style.fontSize]="zoom ? '80px':'50px'" >Hii</h1>
+```
    
 
 
