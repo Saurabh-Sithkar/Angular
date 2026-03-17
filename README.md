@@ -358,7 +358,7 @@ users = ["Saurabh", "Rahul", "Aman"];
   </li>
 </ul>
 ```
-**Nested *ngfor**
+**Nested `*ngfor`**
 * app.ts file
 ```html
 users = [
@@ -384,6 +384,39 @@ users = [
   </ul>
 </div>
 ```
+## *ngIf Directive in Angular
+`*ngIf` is a **structural directive** used to **conditionally display or remove elements** from the DOM based on a given condition.
+---
+### Syntax
+```html
+*ngIf="condition"
+```
+### HTML File
+```html
+<!-- Basic Example -->
+<h1 *ngIf="isLoggedIn">Welcome User</h1>
+
+<!-- Using else -->
+<div *ngIf="isLoggedIn; else loginBlock">
+  Welcome User
+</div>
+
+<ng-template #loginBlock>
+  Please Login
+</ng-template>
+
+<!-- Using then and else -->
+<div *ngIf="isLoggedIn; then thenBlock; else elseBlock"></div>
+
+<ng-template #thenBlock>
+  Welcome User
+</ng-template>
+
+<ng-template #elseBlock>
+  Please Login
+</ng-template>
+```
+
 
 
 
