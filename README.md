@@ -416,6 +416,19 @@ users = [
   Please Login
 </ng-template>
 ```
+## *ngSwitch Directive in Angular
+`*ngSwitch` is a **structural directive** used to display one element from multiple options based on a given condition.
+---
+### Syntax
+```html
+<div [ngSwitch]="expression">
+  <div *ngSwitchCase="'value1'">Content 1</div>
+  <div *ngSwitchCase="'value2'">Content 2</div>
+  <div *ngSwitchDefault>Default Content</div>
+</div>
+```
+# Basic Routing in Angular
+
 
 
 
