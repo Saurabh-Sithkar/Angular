@@ -709,6 +709,51 @@ export class App {
   }
 }
 ```
+# Form Grouping in Reactive Forms
+## 🚀 Overview
+Form grouping in Angular is done using `FormGroup`. It helps you organize and manage multiple form fields together as a single unit.
+---
+## 🔹 Why do we use FormGroup?
+### 1. 🧩 Group Related Fields
+Instead of handling inputs separately, you can group them:
+* app.html file
+```html
+<h1>Form Grouping in Reactive Forms</h1>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+   <input type="text" placeholder="enter name" formControlName="name">
+   <br><br>
+   <input type="text" placeholder="enter email" formControlName="email">
+    <br><br>
+    <input type="text" placeholder="enter password" formControlName="password">
+    <br><br>
+    <button>Submit</button>
+</form>
+```
+* app.ts file
+```ts
+import { Component} from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  imports: [ReactiveFormsModule],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+   
+  profileForm = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl('')
+  })
+  
+  onSubmit() {
+    console.log(this.profileForm.value);
+  }
+}
+```
+
 
 
 
