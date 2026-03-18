@@ -668,6 +668,47 @@ export class User {
 ```html
 <h1>user {{name}}</h1>
 ```
+# Forms in Angular
+* Forms are used for Login,Sign up, Email Subscription, Adding  or updating data in DB
+* **Types of Forms in Angular**
+1. **Reactive** : Complex Validation
+2. **Template-driven** : Simple form
+# Basic Reactive Forms
+* app.html file
+```html
+<h1>Basic of React Forms</h1>
+<form action="" method="post">
+    <input type="text" placeholder="enter name" [formControl]="name">
+    <br><br>
+    <input type="text" placeholder="enter password" [formControl]="password">
+    <br><br>
+    <button type="button" (click)="displayValue()">Login</button>
+</form>
+```
+* app.ts file
+```ts
+import { Component, signal, effect } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { Header } from "./header/header";
+import { Pagenotfound } from './pagenotfound/pagenotfound';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  imports: [ReactiveFormsModule],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+   
+  name = new FormControl('Sithkar');
+  password = new FormControl('123');
+
+  displayValue(){
+    console.log(this.name.value,this.password.value);
+  }
+}
+```
 
 
 
