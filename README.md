@@ -498,6 +498,39 @@ export class App {
 { path: '**', component: PageNotFound }
 ```
 # Pass Data from one Page to Other
+* Add profile  route in app.route.ts
+**Method:1**
+* profile.ts file
+```html
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-profile',
+  imports: [],
+  templateUrl: './profile.html',
+  styleUrl: './profile.css',
+})
+export class Profile {
+
+  username:string|null="";
+  constructor(private route:ActivatedRoute) {}
+  ngOnInit() {
+  this.username = this.route.snapshot.paramMap.get('name');
+  console.log(this.username);
+  }
+}
+```
+* home.html file
+```html
+<p>Home Page</p>
+<a [routerLink]="['profile',{name:'Saurabh'}]">Go to Profile</a>
+```
+* profile.html file
+```html
+<p>Welcome, {{ username }}!</p>
+```
+  
 
 
 
