@@ -581,7 +581,93 @@ export class Profile {
 ```html
 <p>Welcome, {{ username }}!</p>
 ```
-  
+# 📌 Dynamic Routing in Angular
+## 🚀 Overview
+Dynamic routing in Angular allows you to pass data through the URL using parameters. This helps load the same component with different data based on the route.
+---
+## 🔹 What is Dynamic Routing?
+Instead of fixed routes like:
+```
+/home
+/about
+```
+You can create dynamic routes like:
+```
+/profile/:name
+/product/:id
+```
+Here, `:name` and `:id` are route parameters.
+## 🔹 Step 1: Define Route
+Create a route with parameters in your routing file:
+```ts
+import { Routes } from '@angular/router';
+import { User } from './user/user';
+
+export const routes: Routes = [
+    {path:'user/:id/:name',component:User},
+];
+```
+## 🔹 Step 2: Navigate with Parameters
+### Using HTML:
+```html
+// home.html
+<h1>User List</h1>
+<ul>
+    @for(user of users;track user){
+        <li><a routerLink="user/{{user.id}}/{{user.name}}" >{{user.name}}</a></li>
+    }
+</ul>
+```
+### Using TypeScript:
+```ts
+//home.ts
+import { Component } from '@angular/core';
+import { Router,RouterLink } from "@angular/router";
+
+@Component({
+  selector: 'app-home',
+  imports: [RouterLink],
+  templateUrl: './home.html',
+  styleUrl: './home.css',
+})
+export class Home {
+
+users=[
+  {id:'1', name:'Alice',age:30,email:'alice@example.com'},
+  {id:'2', name:'Bob',age:25,email:"bob@example.com"},
+  {id:'3', name:'Charlie',age:35,email:"charlie@example.com"},
+  {id:'4', name:'David',age:28,email:"david@example.com"}
+]
+}
+```
+## 🔹 Step 3: Access Parameters in Component
+```ts
+// user.ts
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-user',
+  imports: [],
+  templateUrl: './user.html',
+  styleUrl: './user.css',
+})
+export class User {
+  name:null|string="";
+  constructor(private route:ActivatedRoute) {}
+
+  ngOnInit(){
+    this.route.params.subscribe(params=>{
+      console.log(params);
+      this.name=params['name'];
+    })
+}
+}
+```
+* user.html
+```html
+<h1>user {{name}}</h1>
+```
 
 
 
