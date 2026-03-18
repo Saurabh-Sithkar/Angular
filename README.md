@@ -493,6 +493,13 @@ export class App {
 </nav>
 ```
 # 404 Page OR Page not found
+* WildCard Route
+```html
+{ path: '**', component: PageNotFound }
+```
+# Pass Data from one Page to Other
+
+
 
 
 
