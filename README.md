@@ -530,6 +530,57 @@ export class Profile {
 ```html
 <p>Welcome, {{ username }}!</p>
 ```
+* Pass Data using button
+* home.ts file
+```html
+import { Component } from '@angular/core';
+import { Router,RouterLink } from "@angular/router";
+
+@Component({
+  selector: 'app-home',
+  imports: [RouterLink],
+  templateUrl: './home.html',
+  styleUrl: './home.css',
+})
+export class Home {
+constructor(private router:Router) {}
+
+goToProfile(){
+  this.router.navigate(['profile',{name:'Saurabh'}]);
+}
+}
+```
+* profile.ts file
+```html
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-profile',
+  imports: [],
+  templateUrl: './profile.html',
+  styleUrl: './profile.css',
+})
+export class Profile {
+
+  username:string|null="";
+  constructor(private route:ActivatedRoute) {}
+  ngOnInit() {
+    this.route.paramMap.subscribe(params=>{
+      this.username=params.get('name');
+    })
+  }
+}
+```
+* home.html file
+```html
+<p>Home Page</p>
+<button (click)="goToProfile()" >Go to Profile Page</button>
+```
+* profile.html file
+```html
+<p>Welcome, {{ username }}!</p>
+```
   
 
 
