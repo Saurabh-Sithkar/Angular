@@ -816,6 +816,61 @@ export class App {
     <button>Submit</button>
 </form>
 ```
+# 📌 Template-Driven Forms in Angular
+Template-driven forms in Angular are **simple and easy-to-use forms** where most of the logic is handled in the **HTML template** using directives.
+---
+## 🚀 What are Template-Driven Forms?
+Template-driven forms rely on:
+- HTML template for form structure
+- Angular directives like `ngModel`
+- Two-way data binding
+👉 Best suited for **simple forms**
+---
+**Code**
+* app.html file
+```html
+<h1>Template Driven Forms</h1>
+
+<form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+    <input type="text" placeholder="Enter Name" name="name" ngModel>
+    <br><br>
+    <input type="password" placeholder="Enter Password" name="password" ngModel>
+    <br><br>
+    <select name="gender" ngModel>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <br><br>
+    <input type="range" min="0" max="20" name="range" ngModel>
+    <br><br>
+    <button>Add User</button>
+</form>
+<h3>{{userDetails?.name}}</h3>
+<h3>{{userDetails?.password}}</h3>
+<h3>{{userDetails?.gender}}</h3>
+<h3>{{userDetails?.range}}</h3>
+```
+* app.ts file
+```ts
+import { Component} from '@angular/core';
+import {FormsModule, NgForm} from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  imports: [FormsModule],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {  
+  userDetails:any;
+  addDetails(val:NgForm){
+    console.log(val);
+    this.userDetails = val;
+  }
+}
+```
+# Template Drive Forms Validation
 
 
 
