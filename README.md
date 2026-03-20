@@ -871,6 +871,82 @@ export class App {
 }
 ```
 # Template Drive Forms Validation
+Validation ensures:
+- Required fields are filled
+- Input format is correct
+- User enters valid data
+👉 All validation is mostly handled in the **HTML template**
+## ✅ Built-in Validators (HTML)
+- `required` → Field must not be empty  
+- `minlength` → Minimum characters required  
+- `maxlength` → Maximum characters allowed  
+- `email` → Valid email format  
+- `pattern` → Custom regex validation  
+---
+## ❗ Validation States
+Each input has the following states:
+- `valid` → Input is valid  
+- `invalid` → Input is invalid  
+- `touched` → User has interacted  
+- `untouched` → Not interacted  
+- `dirty` → Value changed  
+- `pristine` → Value unchanged
+**Code**
+* app.html file
+```html
+<h1>Template Driven Forms</h1>
+
+<form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+    <input #name="ngModel" required type="text" placeholder="Enter Name" name="name" ngModel>
+    <span *ngIf="name.invalid && name.touched" >Name is Required</span>
+
+    <br><br>
+    <input type="password" minlength="5" maxlength="10" #password="ngModel" required placeholder="Enter Password" name="password" ngModel>
+    <span *ngIf="password.invalid && password.touched" >Password is Required</span>
+    <br><br>
+
+    <input type="email" #email="ngModel" required placeholder="Enter Email" name="email" ngModel>
+    <span *ngIf="email.invalid && email.touched" >Email is Required</span>
+
+    <br><br>
+    <select #gender="ngModel" required="" name="gender" ngModel>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <span *ngIf="gender.invalid && gender.touched" >Please Select the Gender</span>
+
+    <br><br>
+    <input type="range" min="0" max="20" name="range" ngModel>
+    <br><br>
+    <button [disabled]="userForm.invalid">Add User</button>
+</form>
+<h3>{{userDetails?.name}}</h3>
+<h3>{{userDetails?.password}}</h3>
+<h3>{{userDetails?.gender}}</h3>
+<h3>{{userDetails?.range}}</h3>
+```
+* app.ts file
+```ts
+import { Component} from '@angular/core';
+import {FormsModule, NgForm} from '@angular/forms';
+import { NgIf } from '@angular/common';
+
+@Component({
+  selector: 'app-root',
+  imports: [FormsModule, NgIf],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {  
+  userDetails:any;
+  addDetails(val:NgForm){
+    console.log(val);
+    this.userDetails = val;
+  }
+}
+```
+# Pass Data Parent to Child Component
 
 
 
