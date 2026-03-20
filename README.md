@@ -754,7 +754,68 @@ export class App {
 }
 ```
 # Reactive Forms Validation
+* Reactive forms use FormControl, FormGroup, and Validators to manage form state and validation    in TypeScript file.
+## ✅ Built-in Validators
+`Validators` provides the following built-in validation methods:
+- `required` → Ensures the field is not empty  
+- `minLength(n)` → Minimum length of input  
+- `maxLength(n)` → Maximum length of input  
+- `email` → Valid email format  
+- `pattern(regex)` → Custom pattern using regular expressions
+**Code**
+* app.ts file
+```ts
+import { Component, signal, effect } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { Header } from "./header/header";
+import { Pagenotfound } from './pagenotfound/pagenotfound';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
+@Component({
+  selector: 'app-root',
+  imports: [ReactiveFormsModule,NgIf],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+   
+  profileForm = new FormGroup({
+    name: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.minLength(5),Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
+    password: new FormControl('',[Validators.minLength(6),Validators.required])
+  })
+  
+  onSubmit() {
+    console.log(this.profileForm.value);
+  }
+
+  get name() {
+    return this.profileForm.get('name');
+  }
+  get email() {
+    return this.profileForm.get('email');
+  } 
+  get password() {
+    return this.profileForm.get('password');
+  } 
+}
+```
+* app.html file
+```html
+<h1>Form Grouping in Reactive Forms</h1>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+   <input type="text" placeholder="enter name" formControlName="name">
+  <span *ngIf="name?.hasError('required')">Name is reqired</span>
+  <span *ngIf="name?.invalid &&(name?.dirty|| name?.touched)" >Provide user name</span>
+   <br><br>
+   <input type="text" placeholder="enter email" formControlName="email">
+    <br><br>
+    <input type="text" placeholder="enter password" formControlName="password">
+    <br><br>
+    <button>Submit</button>
+</form>
+```
 
 
 
