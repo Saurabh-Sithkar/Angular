@@ -947,7 +947,7 @@ export class App {
 }
 ```
 # Pass Data Parent to Child Component
-
+6:54
 
 
 
